@@ -36,7 +36,7 @@ function filterr(e) {
     const txt = e.target.value.toLowerCase();
     document.querySelectorAll('.collection-item').forEach(
         function (li) {
-            const item = li.firstChild.textContent.toLowerCase();
+            const item = li.textContent.toLowerCase();
             if (item.indexOf(txt) != -1) {
                 li.style.display = 'block';
             }
