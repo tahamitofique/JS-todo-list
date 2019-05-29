@@ -1,27 +1,35 @@
-const val=document.querySelector('#task');
-const form=document.querySelector('form');
-const tasklist=document.querySelector('.collection');
-const filter=document.querySelector("#filter");
+const val = document.querySelector('#task');
+const form = document.querySelector('form');
+const tasklist = document.querySelector('.collection');
+const filter = document.querySelector("#filter");
 
 form.addEventListener('submit', addtask);
 tasklist.addEventListener('click', deltask);
+<<<<<<< HEAD
 filter.addEventListener('keyup',filterr);
 document.addEventListener('DOMContentLoaded',loadLS);
+=======
+filter.addEventListener('keyup', filterr);
+>>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
 
-function addtask(e){
-    const li=document.createElement('li');
-    const link=document.createElement('a');
-    const ii=document.createElement('i');
-    li.className='collection-item';
-    link.setAttribute('href','#');
-    link.className='delete-item secondary-content';
-    ii.className='fa fa-remove';
+function addtask(e) {
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    const ii = document.createElement('i');
+    li.className = 'collection-item';
+    link.setAttribute('href', '#');
+    link.className = 'delete-item secondary-content';
+    ii.className = 'fa fa-remove';
     document.querySelector('ul.collection').appendChild(li);
     li.appendChild(link);
     link.appendChild(ii);
     li.appendChild(document.createTextNode(val.value));
+<<<<<<< HEAD
     storeTaskLS(val.value);
     val.value='';
+=======
+    val.value = '';
+>>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
     e.preventDefault();
 }
 function storeTaskLS(taskk){
@@ -59,10 +67,9 @@ function loadLS(){
 
 }
 
-function deltask(e){
-    if(e.target.parentElement.classList.contains('delete-item'))
-    {
-        
+function deltask(e) {
+    if (e.target.parentElement.classList.contains('delete-item')) {
+
         e.target.parentElement.parentElement.remove();
     }
     
@@ -70,18 +77,24 @@ function deltask(e){
 
 
 
-function filterr(e){
-    const txt=e.target.value.toLowerCase();
+function filterr(e) {
+    const txt = e.target.value.toLowerCase();
     document.querySelectorAll('.collection-item').forEach(
+<<<<<<< HEAD
         function(li){
             const item=li.textContent.toLowerCase();
             if(item.indexOf(txt)!=-1)
             {
                 li.style.display='block';
+=======
+        function (li) {
+            const item = li.textContent.toLowerCase();
+            if (item.indexOf(txt) != -1) {
+                li.style.display = 'block';
+>>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
             }
-            else
-            {
-                li.style.display='none';
+            else {
+                li.style.display = 'none';
             }
         }
     );
