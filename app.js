@@ -5,16 +5,9 @@ const filter = document.querySelector("#filter");
 
 form.addEventListener('submit', addtask);
 tasklist.addEventListener('click', deltask);
-<<<<<<< HEAD
-<<<<<<< HEAD
 filter.addEventListener('keyup',filterr);
 document.addEventListener('DOMContentLoaded',loadLS);
-=======
-filter.addEventListener('keyup', filterr);
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
-=======
-filter.addEventListener('keyup', filterr);
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
+
 
 function addtask(e) {
     const li = document.createElement('li');
@@ -28,16 +21,8 @@ function addtask(e) {
     li.appendChild(link);
     link.appendChild(ii);
     li.appendChild(document.createTextNode(val.value));
-<<<<<<< HEAD
-<<<<<<< HEAD
     storeTaskLS(val.value);
     val.value='';
-=======
-    val.value = '';
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
-=======
-    val.value = '';
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
     e.preventDefault();
 }
 function storeTaskLS(taskk){
@@ -51,7 +36,7 @@ function storeTaskLS(taskk){
     localStorage.setItem('taskss',JSON.stringify(taskss));
 }
 
-<<<<<<< HEAD
+
 function loadLS(){
     let taskss;
     if(localStorage.getItem('taskss')===null)
@@ -76,8 +61,7 @@ function loadLS(){
 
 }
 
-=======
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
+
 function deltask(e) {
     if (e.target.parentElement.classList.contains('delete-item')) {
 
@@ -86,29 +70,13 @@ function deltask(e) {
     
 }
 
-
-
 function filterr(e) {
     const txt = e.target.value.toLowerCase();
     document.querySelectorAll('.collection-item').forEach(
-<<<<<<< HEAD
-<<<<<<< HEAD
-        function(li){
-            const item=li.textContent.toLowerCase();
-            if(item.indexOf(txt)!=-1)
-            {
-                li.style.display='block';
-=======
-=======
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
         function (li) {
             const item = li.textContent.toLowerCase();
             if (item.indexOf(txt) != -1) {
                 li.style.display = 'block';
-<<<<<<< HEAD
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
-=======
->>>>>>> 57872bdb3657210c795e4db0d866e90fee4cfc3b
             }
             else {
                 li.style.display = 'none';
